@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Development Vlog</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+<section class="hidden">
+    <h1>Hello.</h1>
+   
+</section>
+
+<section class="hidden">
+    <h1>My name is Viggs</h2>
+    <p>This is my website.</p>
+</section>
+
+<section class="hidden">
+    <h1>I am still building this website</h3>
+</section>
+
+<section class="hidden">
+<h1>Here is some pictures</h4>
+<div class="logos">
+    <div class="logo hidden">
+        <img src="assets/images/1.jpeg" class="slide-img" id="pulse1">
+    </div>
+    <div class="logo hidden">
+        <img src="assets/images/2.jpeg" class="slide-img" id="pulse2">
+    </div>
+    <div class="logo hidden">
+        <img src="assets/images/3.jpeg" class="slide-img" id="pulse3">
+    </div>
+    <div class="logo hidden">
+        <img src="assets/images/4.jpeg" class="slide-img" id="pulse4">
+        <button onclick="opensapage" id="buttonGallery">See more in the Gallery</button>
+    </div>
+    
+    </div>
+</section>
+
+<section class="portrait-background">
+        <div class="portrait">
+        <div class="portrait-background"></div>
+        <img src="assets/images/profilelight.png" class="portrait-light portrait-img">
+        <img src="assets/images/midleft.png" class="portrait-left portrait-img">
+        <img src="assets/images/midright.png" class="portrait-right portrait-img">
+        <img src="assets/images/midground.png" class="portrait-ground portrait-img">
+        <img src="assets/images/blurleft.png" class="portrait-blurleft portrait-img">
+        <img src="assets/images/blurright.png" class="portrait-blurright portrait-img">
+        <img src="assets/images/foregroundleft.png" class="portrait-foregroundleft portrait-img">
+        <img src="assets/images/foregroundright.png" class="portrait-foregroundright portrait-img">
+        <audio id="poemAudio">
+          <source src="assets/audio/poem.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+        <button onclick="playAudio()" id="playPoem">You've reached the end.</button>
+    </div>
+    </section>
+
+    <svg style="display: none;">
+        <defs>
+          <filter id="noise">
+            <feTurbulence
+              baseFrequency="0.7,0.8"
+              seed="0"
+              type="fractalNoise"
+              result="static"
+            >
+            <!-- can't get 'begin' to work with class rather than id -->
+              <animate
+                attributeName="seed"
+                values="0;100"
+                dur="800ms"
+                repeatCount="1" 
+                begin="pulse1.mouseenter; pulse2.mouseenter; pulse3.mouseenter; pulse4.mouseenter" 
+              />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="static" >
+              <animate
+                attributeName="scale"
+                values="0;40;0"
+                dur="800ms"
+                repeatCount="1" 
+                begin="pulse1.mouseenter; pulse2.mouseenter; pulse3.mouseenter; pulse4.mouseenter"
+              />
+            </feDisplacementMap>
+          </filter>  
+        </defs>
+      </svg>
+</body>
